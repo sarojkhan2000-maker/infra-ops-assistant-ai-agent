@@ -55,13 +55,23 @@ If user reports high C drive usage:
 
 ## Final Working Flows
 
-### VM Start Flow
+- VM Start Flow
 Foundry Chat → OpenAPI Tool → Logic App → Automation Webhook → rb-start-vm → VM started
 
-### SOP Cleanup Flow
+- SOP Cleanup Flow
 Foundry Chat → SOP RAG → User Approval → Logic App → Automation Webhook → rb-clear-temp-folder → C:\Temp cleaned
 
 ## Security Notes
 - Webhook URLs and Logic App signatures are not committed to GitHub.
 - Secrets are replaced with placeholders.
 - Real URLs should be stored securely outside source code.
+
+## Future Scope and Practical Applications
+- This agent can be connected to Microsoft Teams for real-time infrastructure operations.
+- During on-call support, cloud/infra admins can trigger approved actions from Teams mobile.
+- Example actions:
+  - Start a server during urgent downtime.
+  - Trigger approved folder cleanup such as C:\Temp.
+  - Follow SOP-based recommendations before taking action.
+- This can save time during incidents and reduce effort during On-call support.
+- The same design can be extended to include approval workflows, role-based access, and audit logging.
