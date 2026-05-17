@@ -1,0 +1,6 @@
+.env
+*.secret
+secrets.json
+real-urls.txt
+.DS_Store
+.vscode/

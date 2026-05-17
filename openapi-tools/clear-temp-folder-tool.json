@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Clear Temp Folder Logic App Tool",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://YOUR_LOGIC_APP_HOST"
+    }
+  ],
+  "paths": {
+    "/workflows/YOUR_WORKFLOW_ID/triggers/When_an_HTTP_request_is_received/paths/invoke": {
+      "post": {
+        "operationId": "clear_temp_folder",
+        "summary": "Trigger C:\\Temp cleanup runbook using Logic App",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "2016-10-01"
+            }
+          },
+          {
+            "name": "sp",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "/triggers/When_an_HTTP_request_is_received/run"
+            }
+          },
+          {
+            "name": "sv",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "1.0"
+            }
+          },
+          {
+            "name": "sig",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "YOUR_SIG_VALUE"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "C:\\Temp cleanup runbook triggered successfully"
+          }
+        }
+      }
+    }
+  }
+}
